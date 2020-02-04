@@ -1,0 +1,37 @@
+when a service depends on others there comes conditions
+
+#sample ansible file
+
+-
+    name: Start service
+    hosts: all_servers
+    tasks:
+	-    service: 
+			name=mysql
+			state=started
+	     when: ansible_host == "db.company.com"
+
+	-    service:
+			name:httpd
+			state=started
+	     when: ansible_connection == "web1.company.com" or
+		   ansible_connection == "web2.company.com"
+
+you can use "or","and" for comparison
+
+1 more example
+
+-
+    name: Check status of service and email if it's down
+    hosts: localhost
+    tasks:
+	-    command: service httpd status
+	     register: command_output
+
+	-    mail:
+		  to: Admins <system.admins@company.com>
+		  subject: Service Alert
+		  body: 'Service {{ ansible_hostname }} is down.'
+	     when: command_output.stdout.find('down') !=1
+
+For more please see Ansible Documentation

@@ -1,0 +1,50 @@
+Ansible
+
+Ansible is an open-source software provisioning, configuration management, and application-deployment tool. 
+It runs on many Unix-like systems, and can configure both Unix-like systems as well as Microsoft Windows. 
+It includes its own declarative language to describe system configuration.
+
+Ansible is an agentless service. It requireds simple ssh connectivity. 
+
+Inventory File (path /etc/ansible/hosts) ini format
+
+#sample Inventory File
+
+server1.company.com
+server2.company.com
+
+[mail]
+server3.company.com
+server4.company.com
+
+[db]
+server5.company.com
+server6.company.com
+
+[web]
+server7.company.com
+server8.company.com
+
+[all_server:children]
+mail
+db
+web
+
+#more sample inventory file
+
+web	ansible_host=server1.company.com	ansible_connection=ssh		ansible_user=root
+db 	ansible_host=server2.company.com	ansible_connection=ssh		ansible_user=admin
+mail	ansible_host=server3.company.com	ansible_connection=winrm	ansible_ssh_pass=64af648fdf5
+web2	ansible_host=server4.company.com	ansible_connection=ssh		ansible_user=root
+
+localhost ansible_connection=localhost
+
+#inventoryu peremeter
+ 1. ansible_connection - ssh/winrm for windows/localhost
+ 2. ansible_port - 22/5986
+ 3. ansible_user - root/administrator
+ 4. ansible_ssh_pass - Password
+
+This isn't very good practices.
+
+Security: Ansible Vault (look for encrypted format)

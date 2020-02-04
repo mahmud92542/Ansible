@@ -1,0 +1,28 @@
+Variable
+
+Store information that varies with each host
+
+
+playbook1.yaml
+
+#sample ansible file
+-
+    name: Add DNS server to revolv.conf
+    hosts: localhost
+    vars:
+	dns_server: 10.1.250.10
+    tasks:
+		- lineinfile:
+			path: /etc/resolv.conf
+			line: 'nameserver {{ dns_server }}' #here we use dns_server variable instead of ip
+
+we're using Jinja2 templating
+
+1. source: {{ inter_ip_range }} #this one is not correct
+
+2. source: '{{ inter_ip_range }}' #this one is correct
+
+3. source: something {{ inter_ip_range }} something #this one is also correct
+
+when you put only variable it's mandatory to put ''. see at 2
+if the variable uses middle of a sentence, '' it's not required. see at 3

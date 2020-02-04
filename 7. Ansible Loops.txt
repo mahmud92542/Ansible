@@ -1,0 +1,14 @@
+#sample ansible file
+
+-
+    name: Install Packages
+    hosts: localhost
+    tasks:
+	-  yum: name='{{ item }}'    state=present
+	   with_items:
+		-    httpd
+		-    binutils
+		-    glibc
+		-    ksh
+
+please look on ansible documentation for details.

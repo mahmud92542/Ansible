@@ -1,0 +1,7 @@
+Preparing Windows Server
+Ansible-Galaxy
+Patterns
+Dynamic Inventory
+Developing Custom Modules
+
+Please do google for more information about this topics.

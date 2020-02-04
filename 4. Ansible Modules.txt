@@ -1,0 +1,81 @@
+There are 100's of modules in Ansible
+for more see the Ansible Documentation
+we'll disscuss some here
+
+MODULES
+
+1. System
+	- User
+	- Group
+	- Hostname
+	- Iptables
+	- Lvg
+	- Lvol
+	- Make
+	- Mount
+	- Ping
+	- Timezone
+	- Systemd
+	- Service
+
+2. Commands
+	 - Command
+	 - Expect
+	 - Raw
+	 - Script
+	 - Shell
+
+3. Files
+	- Acl
+	- Archive
+	- Copy
+	- File
+	- Find
+	- Lineinfile
+	- Replace
+	- Stat
+	- Template
+	- Unarchive
+
+4. Database
+	 - Mongodb
+	 - Mssql
+	 - Mysql
+	 - Postgresql
+	 - Proxysql
+	 - vertica
+
+5. Cloud
+	- Amazon
+	- Atomic
+	- Azure
+	- Centrylink
+	- Cloudscale
+	- Cloudstack
+	- Digital Ocean
+	- Docker
+	- Google
+	- Linode
+	- Openstack
+	- Smartos
+	- Softlayer
+	- VMware
+
+6. Windows
+	- Win_copy
+	- Win_command
+	- Win_domain
+	- Win_file
+	- Win_iis_website
+	- Win_msg
+	- Win_msi
+	- Win_package
+	- Win_ping
+	- Win_path
+	- Win_robocopy
+	- Win_regedit
+	- Win_shell
+	- Win_service
+	- Win_user
+
+And More

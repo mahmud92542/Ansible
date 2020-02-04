@@ -1,0 +1,28 @@
+Roles provide a framework for fully independent, or interdependent collections of variables, tasks, files, templates, and modules.
+
+In Ansible, the role is the primary mechanism for breaking a playbook into multiple files. This simplifies writing complex playbooks, 
+and it makes them easier to reuse. The breaking of playbook allows you to logically break the playbook into reusable components.
+
+Each role is basically limited to a particular functionality or desired output, 
+with all the necessary steps to provide that result either within that role itself or in other roles listed as dependencies.
+
+Roles are not playbooks. Roles are small functionality which can be independently used but have to be used within playbooks. 
+There is no way to directly execute a role. Roles have no explicit setting for which host the role will apply to.
+
+Top-level playbooks are the bridge holding the hosts from your inventory file to roles that should be applied to those hosts.
+
+
+Folder Structure
+
+Ansible Project
+	inventory.txt
+	setup_application.yml
+roles
+    webservers
+	files
+	templates
+	tasks
+	handlers
+	vars
+	defaults
+	meta

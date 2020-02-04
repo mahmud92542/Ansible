@@ -1,0 +1,55 @@
+An Ansible playbook is an organized unit of scripts that defines work 
+for a server configuration managed by the automation tool Ansible.
+
+it's an yaml/yml format
+
+Playbook - A single YAML file
+Play - Defines a set of activities (tasks) to be run on hosts
+Task - An Action to be performed on the host
+ * Ecvute a command
+ * Run a script
+ * Install a package
+ * Shutdown/Restart
+
+
+file name - playbook.yml
+
+#simple ansible
+
+-
+  name: Play 1
+  hosts: localhost
+  task:
+    -  name: Excute command 'date'
+       command: date
+
+    -  name: Excute script on server
+       script: test_script.sh
+
+-
+  name: Play 1
+  hosts: localhost
+  task:
+    -  name: Install httpd service
+       yum: 
+	  name: httpd
+	  state: present
+
+    -  name: Start web server
+       service:
+	  name: httpd
+          state: started
+
+'-' indicates that it's an item in the list.
+
+Module
+
+The different actions run by tasks are called modules.
+such as command,script,yum,service etc. 
+find out more module in Ansible Documentation file or use command ansible-doc-l
+
+How to run Ansible Playbook
+
+syntax: ansible-playbook <playbook file name>
+or, for help
+ansible-playbook --help

@@ -1,0 +1,51 @@
+YAML
+
+#Key Valur Pair
+
+Fruit : Apple
+Vegetable : Carrot
+Liquid: Water
+Meat: Chicken
+
+#Arrary/List
+
+Fruits:
+-    Orange
+-    Apple
+-    Banana
+
+Vegetables:
+-    Carrot
+-    Tomato
+-    Potato
+
+#Dictonary/Map
+
+Banana:
+    Calories: 105
+    Fat: 0.4 g
+    Cardb: 27 g
+
+Grapes:
+    Calories: 62
+    Fat: 0.3 g
+    Cardb: 16 g
+
+
+#Key Value/Dictonary/Lists
+
+Fruits:
+    -    Banana:
+	      Calories: 105
+    	      Fat: 0.4 g
+    	      Cardb: 27 g
+    -     Grape:
+	      Calories: 105
+              Fat: 0.4 g
+              Cardb: 27 g
+
+Dictonary - Unordered
+List - Ordered
+Any line starts with # is ignored that means it's comment
+
+##equal number of space and identation is mandatory##
